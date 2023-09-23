@@ -1,0 +1,33 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+{% block title %}Servicios{% endblock %}
+
+{% block content %}
+  {% for service in services reversed %}
+    <section class="page-section">
+      <div class="container">
+         <div class="product-item">
+                  
+                  <!-- Servicios -->
+                  <div class="row project">  	
+                      <div class="col-lg-3 col-md-4 offset-lg-1">
+                          <img class="img-fluid" src="{{service.image.url}}" alt="" >
+                          
+                      </div>
+                      <div class="bg-faded p-5 d-flex mr-auto rounded">
+
+                              <div class="col-lg-7 col-md-8">
+                                  <h2 class="section-heading title">{{service.title}}</h2>
+                                  <h4><small>{{service.subtitle}}</small></h4>  
+                                  <p>{{service.description}}</p>
+                            
+                              </div>
+                       </div>
+                  </div>
+        </div>
+      </div>
+    </section>
+  {% endfor %}
+{% endblock %}
